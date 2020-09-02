@@ -11,9 +11,9 @@ To define multiple port-bindings, `docker run` this image by passing the environ
 Example:
 
 ```
-192.168.0.1:80:8080 mail.google.com:443:8443 www.google.com:443
+192.168.0.1:80:8080 mail.google.com:443:8443 smtp.gmail.com:465 smtp.gmail.com:587
 ```
 
-Separate multiple destinations using space characters. You can omit the local port, in which case, local port will be the same as the destination port.
+Separate multiple destinations using space characters. You can omit the local (i.e. within the container) port, in which case, local port will be the same as the destination port.
 
-In addition, you can also enable log file by passing the log file path as environment variable `LOGFILE`. Rinetd also supports outputting web-server style logfile format, which can be enabled by passing a non-empty environment variable `LOGCOMMON`.
+In addition, you can also enable log file by passing the log file path as environment variable `LOGFILE`, for example you can pass `/dev/stdout` to get the log outputted to the STDOUT. Rinetd also supports outputting web-server style logfile format, which can be enabled by passing a non-empty environment variable `LOGCOMMON`.
